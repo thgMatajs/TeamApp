@@ -4,29 +4,23 @@ import { Groups } from "../screens/Groups"
 import { Players } from "../screens/Players"
 import { NewGroup } from "../screens/NewGroup"
 
-export enum RouteName {
-    Groups = "groups",
-    Players = "players",
-    NewGroup = "newGroup"
-}
-
 const { Navigator, Screen } = createNativeStackNavigator()
 
 export function AppRoutes() {
     return (
-        <Navigator>
+        <Navigator screenOptions={{ headerShown: false }}>
             <Screen
-                name={RouteName.Groups}
+                name="groups"
                 component={Groups}
             />
 
             <Screen
-                name={RouteName.Players}
+                name="players"
                 component={Players}
             />
 
             <Screen
-                name={RouteName.NewGroup}
+                name="new"
                 component={NewGroup}
             />
 
