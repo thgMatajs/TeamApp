@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { FlatList } from "react-native";
 import { ButtonIcon } from "../../components/ButtonIcon";
+import { Button } from "../../components/Button";
 import { Filter } from "../../components/Filter";
 import { Header } from "../../components/Header";
 import { HighLight } from "../../components/HighLight";
@@ -72,6 +73,11 @@ export function Players() {
                     { paddingBottom: 56 },
                     players.length === 0 && { flex: 1 }
                 ]}
+            />
+
+            <Button
+                title="Remover turma"
+                type='SECUNDARY'
             />
 
         </Container>
