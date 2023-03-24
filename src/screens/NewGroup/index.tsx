@@ -6,14 +6,20 @@ import { Header } from "../../components/Header";
 import { HighLight } from "../../components/HighLight";
 import { Input } from "../../components/Input";
 import { Container, Content, Icon } from "./styles";
+import { groupCreate } from "../../storage/group/groupCreate";
 
 export function NewGroup() {
 
     const [group, setGroup] = useState('');
     const navigation = useNavigation();
 
-    function handleNavigationToPlayers() {
+    async function handleNavigationToPlayers() {
+        try {
+            await groupCreate(group)
         navigation.navigate('players', { group })
+        } catch (error) {
+            
+        }
     }
 
     return (
